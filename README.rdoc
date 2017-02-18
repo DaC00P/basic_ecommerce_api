@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Include a readme file explaining your assumptions, providing any necessary assumptions,
+and stating what you would accomplish with more time.
 
-Things you may want to cover:
+Assumptions:
+No authentication or restriction of routes based on a session/login/etc
+The user of the API wants to have CRUD functionality for Customers, Products, Orders, and Categories.
+This CRUD will be very basic and not implement high-detail error handling. This can be easily implemented in the future with a shared JBuilder view
+Views (and JBuilder) are not implemented, as business requirements from the user side are not present (in terms of how data should be formatted or transmitted)
+All data will be served in JSON in the most standard way.
 
-* Ruby version
+Assumptions Specifically Regarding Stories:
+(The numbers below directly relate the numbered stories)
+1) Products and Categories are not required to be linked. E.G. A product can exist without a category, and vice versa.
+2) Order Status will be stored as a text field for now. There is potential to use Booleans(T/F/Null) for the three given states of an order.
+3/4) I wrote the query in SQL (stored in a .txt) and am loading it via ActiveRecord(Method used: ActiveRecord::Base.execute File.read('PATH_TO_FILE'))
+5) I am doing minimal error checking on the format of the date. It is being formatted by Ruby's standard DateTime functionality
+6) This is accomplished via ActiveRecord
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+ADDITIONAL QUESTIONS:
+1)
+2)

@@ -8,7 +8,6 @@
 #  out_of_stock :boolean          default(FALSE), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  category_id  :integer          not null
 #
 
 require "rails_helper"
@@ -18,7 +17,6 @@ FactoryGirl.define do
     name 'cat treat'
     description 'yum yum treat'
     out_of_stock FALSE
-    category_id 1
   end
 end
 
@@ -35,10 +33,6 @@ RSpec.describe "Product" do
 
   describe "validates the presence of an out_of_stock boolean" do
     it { should validate_presence_of(:out_of_stock) }
-  end
-
-  describe "validates the presence of a category ID" do
-    it { should validate_presence_of(:category_id) }
   end
 
   describe "has many order items (and thus, orders)" do
