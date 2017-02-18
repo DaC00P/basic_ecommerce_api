@@ -46,4 +46,17 @@ RSpec.describe "Customer" do
   describe "has many orders" do
     it {should have_many(:orders)}
   end
+
+  describe "has many order_items" do
+    it {should have_many(:order_items)}
+  end
+
+  describe "has many orders" do
+    it {should have_many(:products)}
+  end
+
+  describe "has many orders" do
+    it {should have_many(:categories)}
+  end
+
 end

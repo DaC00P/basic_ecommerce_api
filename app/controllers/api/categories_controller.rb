@@ -16,7 +16,7 @@ class Api::CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    @category.update_attributes(reservation_params)
+    @category.update_attributes(category_params)
     if @category.save
       render json: @category
     else

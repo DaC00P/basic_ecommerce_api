@@ -16,7 +16,7 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update_attributes(reservation_params)
+    @product.update_attributes(product_params)
     if @product.save
       render json: @product
     else

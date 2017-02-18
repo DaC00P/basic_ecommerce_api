@@ -16,7 +16,7 @@ class Api::CustomersController < ApplicationController
 
   def update
     @customer = Customer.find(params[:id])
-    @customer.update_attributes(reservation_params)
+    @customer.update_attributes(customer_params)
     if @customer.save
       render json: @customer
     else
