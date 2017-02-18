@@ -1,0 +1,2 @@
+module CategoriesPurchasedForSingleCustomerHelper
+end

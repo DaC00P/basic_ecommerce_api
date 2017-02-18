@@ -1,0 +1,2 @@
+module OrdersForSingleCustomerHelper
+end
