@@ -16,7 +16,7 @@ Join tables are used for the Categories-Products and Orders-OrderItems(products)
 * 1: Products and Categories are not required to be linked. E.G. A product can exist without a category, and vice versa.<br/>
 * 2: Order Status will be stored as a text field. There is the potential for more information to be created with an OrderStatuses table.<br/>
 * 3/4: I wrote the query in SQL (stored in a .txt) and am loading it via ActiveRecord(Method used: ActiveRecord::Base.execute File.read('PATH_TO_FILE'))<br/>
-* 5: I am doing minimal error checking on the format of the date. It is being formatted by Ruby's standard DateTime functionality<br/>
+* 5: I am doing minimal error checking on the format of the date. It is being formatted by Ruby's standard Date functionality. Leap years/seconds are being disregarded for the purpose of per day/week/month calculations
 * 6: This is accomplished via ActiveRecord
 
 ##ADDITIONAL QUESTIONS:
