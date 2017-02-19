@@ -2,7 +2,9 @@ class Api::ProductsPerTimeperiodController < ApplicationController
   def index
     #run an activerecord query that takes a date range
     #and gets all the products sold by quantity per day/week/month
-    Product.where()
+    #use includes here for eager loading to avoid many DB queries
+    @products = Orders.includes(date: format_date).products
+    ##TODO finish this, avoid N+1 queries in the process. Figure out if doing them in sequence counts as an N+1
   end
 
   private

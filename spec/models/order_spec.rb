@@ -39,4 +39,8 @@ RSpec.describe "Product" do
   describe "should have many order items" do
     it {should have_many(:order_items)}
   end
+
+  describe "should have many products" do
+    it {should have_many(:products)}
+  end
 end
