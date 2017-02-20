@@ -16,7 +16,7 @@ Join tables are used for the Categories-Products and Orders-OrderItems(products)
 * 1: Products and Categories are not required to be linked. E.G. A product can exist without a category, and vice versa.<br/>
 * 2: Order Status will be stored as a text field. There is the potential for more information to be created with an OrderStatuses table.<br/>
 * 3/4: I wrote the query in SQL (stored in a .txt) and am loading it via ActiveRecord(Method used: ActiveRecord::Base.execute File.read('PATH_TO_FILE'))<br/>
-* 5: I am doing minimal error checking on the format of the date. It is being formatted by Ruby's standard Date functionality. Leap years/seconds are being disregarded for the purpose of per day/week/month calculations. I have used ActiveRecord, however, a better way to do is likely to write 3 SQL queries, one for each day/week/month period, call them as scopes on the product class depending on the option. I used my method due to time constraints, and it is incomplete and needs fixing/testing. Apologies.
+* 5: I am doing minimal error checking on the format of the date. It is being formatted by Ruby's standard Date functionality. Leap years/seconds are being disregarded for the purpose of per day/week/month calculations. I have written three queries, one for each period(day/week/month) nad put them in scopes. However, I am having issues with the group_by for the date range. The queries are incomplete and needs fixing/testing. Apologies.
 * 6: This is accomplished via ActiveRecord
 
 ##FURTHER WORK TO BE DONE

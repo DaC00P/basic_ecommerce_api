@@ -14,7 +14,7 @@ class OrderItem < ActiveRecord::Base
   validates :order_id,
             :product_id,
             :product_quantity,
-            presence: true
+             presence: true
 
   belongs_to :order
 
