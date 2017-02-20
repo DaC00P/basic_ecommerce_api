@@ -24,6 +24,9 @@ class Order < ActiveRecord::Base
   #FIXME && TODO write 3 SQL queries, one for each day/week/month period,
   #run as an activerecord scope that takes a date range
   #and gets all the products sold by quantity per day/week/month
+  #After this functions, refactor it so that there is *one* scope, with a call to a helper method
+  #that decides passed on an arguement which of the three (month/day/year) helper methods should be called.
+  #this helper method to the helper method of the scope will run the query via find_by_sql() call.
 
   scope :products_per_day, -> (date_range) do
     sql_query = <<-SQL
