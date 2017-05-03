@@ -27,6 +27,8 @@ gem 'annotate'
 #does basic email address validation for users
 gem 'validates_email_format_of'
 
+# Add devise for authentication
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
