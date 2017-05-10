@@ -28,6 +28,12 @@ development:
   <<: *default
   database: shiptAPI_development
 
+# To access this psql from colleagues who aren't coop:
+# In terminal type this:
+# psql pgcoop -h 127.0.0.1 -d shiptAPI_development
+# And when prompted for password, type password above
+# And then you're in
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
