@@ -1,4 +1,6 @@
 class Api::UsersController < ApplicationController
+	before_action :authenticate_user!
+
 	def create
 		@user = User.new(user_params)
 
@@ -13,6 +15,18 @@ class Api::UsersController < ApplicationController
     @user = User.all
     render json: @user
   end
+
+	def show
+		@user = User.find(params[:id])
+		if @user
+			render json: @user
+		else
+			render(
+				json: {error: "This user cannot be found."},
+				status: 422
+			)
+		end
+	end
 
   def update
     @user = User.find(params[:id])
@@ -45,7 +59,6 @@ class Api::UsersController < ApplicationController
 	private
 
 	def user_params
-		# params.require(:user).permit(:user_first_name, :user_last_name, :user_email_address, :username, :encrypted_password, :reset_password_token, ......)
-		# which fields from schema to be added here???
+		params.require(:user).permit(:user_first_name, :user_last_name, :email, :username)
 	end
 end

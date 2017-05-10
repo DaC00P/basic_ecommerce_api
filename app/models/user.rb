@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
            :username,
            :presence => true
 
-  validates :user_email_address,
+  validates :email,
             uniqueness: true,
             email_format: { message: 'email has invalid format' }
 
