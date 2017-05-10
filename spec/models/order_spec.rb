@@ -6,7 +6,7 @@
 #  customer_id  :integer          not null
 #  number_items :integer
 #  order_status :text
-#
+
 
 require "rails_helper"
 
