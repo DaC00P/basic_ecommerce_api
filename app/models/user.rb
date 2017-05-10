@@ -4,4 +4,25 @@ class User < ActiveRecord::Base
   # :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable
+
+  validates :user_first_name,
+           :user_last_name,
+           :email,
+           :username,
+           :presence => true
+
+  validates :user_email_address,
+            uniqueness: true,
+            email_format: { message: 'email has invalid format' }
+
+  has_many :orders
+
+  has_many :order_items,
+           through: :orders
+
+  has_many :products,
+           through: :order_items
+
+  has_many :categories,
+           through: :products
 end
